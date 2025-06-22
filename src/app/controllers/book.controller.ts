@@ -3,9 +3,9 @@ import express, { Request, Response } from "express";
 import { Book } from "../models/book.model";
 
 
-export const libraryRoutes = express.Router()
+export const bookRoutes = express.Router()
 
-libraryRoutes.post('/books', async (req: Request, res: Response) => {
+bookRoutes.post('/books', async (req: Request, res: Response) => {
 
     const body = req.body;
     const book = await Book.create(body)
@@ -17,7 +17,7 @@ libraryRoutes.post('/books', async (req: Request, res: Response) => {
     })
 })
 
-libraryRoutes.get('/books', async(req: Request, res: Response) => {
+bookRoutes.get('/books', async(req: Request, res: Response) => {
     const books = await Book.find()
 
     res.status(201).json({
@@ -28,7 +28,7 @@ libraryRoutes.get('/books', async(req: Request, res: Response) => {
 
 })
 
-libraryRoutes.get('/:bookId', async(req: Request, res: Response)=>{
+bookRoutes.get('/:bookId', async(req: Request, res: Response)=>{
 
     const bookId = req.params.bookId
     const book = await Book.findById(bookId)
@@ -40,7 +40,7 @@ libraryRoutes.get('/:bookId', async(req: Request, res: Response)=>{
     })
 })
 
-libraryRoutes.patch('/books/:bookId', async(req: Request, res: Response)=>{
+bookRoutes.patch('/books/:bookId', async(req: Request, res: Response)=>{
     const bookId = req.params.bookId;
     const updateBody = req.body
     const book = await Book.findByIdAndUpdate(bookId, updateBody, {new: true})
@@ -52,7 +52,7 @@ libraryRoutes.patch('/books/:bookId', async(req: Request, res: Response)=>{
     })
 })
 
-libraryRoutes.delete('/books/:bookId', async(req: Request, res: Response)=>{
+bookRoutes.delete('/books/:bookId', async(req: Request, res: Response)=>{
     const bookId = req.params.bookId;
     const book = await Book.findByIdAndDelete(bookId)
 
