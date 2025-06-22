@@ -20,7 +20,6 @@ Follow these steps to set up and run the project locally:
 
 ### 1. Clone the Repository
 
-```bash
 git clone https://github.com/your-username/book-management-api.git
 cd book-management-api
 
@@ -31,7 +30,7 @@ cd book-management-api
 ### 3.  Run the Project
 - npm run dev
 
-```
+
 
 ## 📬 API Endpoints – Explanation
 
@@ -41,7 +40,6 @@ cd book-management-api
 - **Purpose:** Adds a new book to the library.
 - **Request Body Example:**
 
-  ```json
  {
   "title": "The Theory of Everything",
   "author": "Stephen Hawking",
@@ -51,6 +49,7 @@ cd book-management-api
   "copies": 5,
   "available": true
 }
+
 
 ### 🔹 2. Get All Books
 
