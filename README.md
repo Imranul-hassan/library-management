@@ -10,6 +10,8 @@ An Express.js REST API for managing books in a library system. Built with TypeSc
 - Retrieve a specific book by ID
 - Update book details
 - Delete a book
+- Borrow a book  
+- Get borrowed books summary  
 
 
 ## 📦 Installation
@@ -22,12 +24,14 @@ Follow these steps to set up and run the project locally:
 git clone https://github.com/your-username/book-management-api.git
 cd book-management-api
 
-### 2.  Install Dependencies
+### 2. Install Dependencies
 
 - npm install
 
 ### 3.  Run the Project
 - npm run dev
+
+```
 
 ## 📬 API Endpoints – Explanation
 
