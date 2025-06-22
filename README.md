@@ -40,15 +40,16 @@ cd book-management-api
 - **Purpose:** Adds a new book to the library.
 - **Request Body Example:**
 
- {
-  "title": "The Theory of Everything",
-  "author": "Stephen Hawking",
-  "genre": "SCIENCE",
-  "isbn": "9780553380163",
-  "description": "An overview of cosmology and black holes.",
-  "copies": 5,
-  "available": true
-}
+  ```json
+  {
+    "title": "The Theory of Everything",
+    "author": "Stephen Hawking",
+    "genre": "SCIENCE",
+    "isbn": "9780553380163",
+    "description": "An overview of cosmology and black holes.",
+    "copies": 5,
+    "available": true
+  }
 
 
 ### 🔹 2. Get All Books
@@ -99,10 +100,10 @@ cd book-management-api
 
   ```json
   {
-    "book": "6856dddd863975c69a8c39d6",  // Book ObjectId
+    "book": "6856dddd863975c69a8c39d6", 
     "quantity": 2,
     "dueDate": "2025-07-01T00:00:00.000Z"
- 
+  }
  
  ### 🔹 7. Borrowed Books Summary
 
