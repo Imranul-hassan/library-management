@@ -9,7 +9,7 @@ app.use(express.json());
 
 
 app.use('/api', bookRoutes)
-app.use('/api/borrow', borrowRoutes)
+app.use('/api', borrowRoutes)
 
 app.get('/', (req: Request, res: Response) => {
     res.send('welcome to library app')

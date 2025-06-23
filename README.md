@@ -1,5 +1,5 @@
 
-# 📚 Book Management API
+# 📚 Library Management API
 
 An Express.js REST API for managing books in a library system. Built with TypeScript, Mongoose (MongoDB), and Node.js.
 
@@ -20,8 +20,7 @@ Follow these steps to set up and run the project locally:
 
 ### 1. Clone the Repository
 
-git clone https://github.com/your-username/book-management-api.git
-cd book-management-api
+git clone https://github.com/Imranul-hassan/library-management.git
 
 ### 2. Install Dependencies
 
@@ -36,7 +35,7 @@ cd book-management-api
 
 ### 🔹 1. Create a New Book
 
-- **URL:** `POST /books`
+- **URL:** `POST /api/books`
 - **Purpose:** Adds a new book to the library.
 - **Request Body Example:**
 
@@ -54,20 +53,20 @@ cd book-management-api
 
 ### 🔹 2. Get All Books
 
-- **URL:** `GET /books`
+- **URL:** `GET /api/books`
 - **Purpose:** Retrieves a list of all books available in the library database.
 
 ### 🔹 3. Get a Single Book by ID
 
-- **URL:** `GET /:bookId`
+- **URL:** `GET /api/:bookId`
 - **Purpose:** Retrieves details of a specific book by its MongoDB `_id`.
 
 - **Example:**  
   `GET /665b8ef15e85c8a5e874d51a`
 
-  ### 🔹 4. Update a Book
+### 🔹 4. Update a Book
 
-- **URL:** `PATCH /books/:bookId`
+- **URL:** `PATCH /api/books/:bookId`
 - **Purpose:** Updates one or more fields of a book.
 
 - **Request Body Example:**
@@ -79,7 +78,7 @@ cd book-management-api
 
 ### 🔹 5. Delete a Book
 
-- **URL:** `DELETE /books/:bookId`
+- **URL:** `DELETE /api/books/:bookId`
 - **Purpose:** Deletes a book from the library.
 
 - **Example:**  
@@ -107,7 +106,7 @@ cd book-management-api
  
  ### 🔹 7. Borrowed Books Summary
 
-- **URL:** `GET /api/borrow`
+- **URL:** `GET /api/borrow/summary`
 - **Purpose:** Returns a summary of borrowed books, including the total quantity borrowed per book along with book details.
 
 - **Details:**

@@ -14,7 +14,7 @@ export const borrowSummary = async (req: Request, res: Response) => {
       {
         $lookup: {
           from: "books",           
-          localField: "book",
+          localField: "_id",
           foreignField: "_id",
           as: "bookInfo"
         }
@@ -48,4 +48,4 @@ export const borrowSummary = async (req: Request, res: Response) => {
       error
     });
   }
-});
+};

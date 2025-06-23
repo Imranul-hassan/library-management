@@ -12,11 +12,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.libraryRoutes = void 0;
+exports.bookRoutes = void 0;
 const express_1 = __importDefault(require("express"));
 const book_model_1 = require("../models/book.model");
-exports.libraryRoutes = express_1.default.Router();
-exports.libraryRoutes.post('/books', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.bookRoutes = express_1.default.Router();
+exports.bookRoutes.post('/books', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const body = req.body;
     const book = yield book_model_1.Book.create(body);
     res.status(201).json({
@@ -25,7 +25,7 @@ exports.libraryRoutes.post('/books', (req, res) => __awaiter(void 0, void 0, voi
         book
     });
 }));
-exports.libraryRoutes.get('/books', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.bookRoutes.get('/books', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const books = yield book_model_1.Book.find();
     res.status(201).json({
         success: true,
@@ -33,7 +33,7 @@ exports.libraryRoutes.get('/books', (req, res) => __awaiter(void 0, void 0, void
         books
     });
 }));
-exports.libraryRoutes.get('/:bookId', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.bookRoutes.get('/:bookId', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const bookId = req.params.bookId;
     const book = yield book_model_1.Book.findById(bookId);
     res.status(201).json({
@@ -42,7 +42,7 @@ exports.libraryRoutes.get('/:bookId', (req, res) => __awaiter(void 0, void 0, vo
         book
     });
 }));
-exports.libraryRoutes.patch('/books/:bookId', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.bookRoutes.patch('/books/:bookId', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const bookId = req.params.bookId;
     const updateBody = req.body;
     const book = yield book_model_1.Book.findByIdAndUpdate(bookId, updateBody, { new: true });
@@ -52,7 +52,7 @@ exports.libraryRoutes.patch('/books/:bookId', (req, res) => __awaiter(void 0, vo
         book
     });
 }));
-exports.libraryRoutes.delete('/books/:bookId', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.bookRoutes.delete('/books/:bookId', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const bookId = req.params.bookId;
     const book = yield book_model_1.Book.findByIdAndDelete(bookId);
     res.status(201).json({
